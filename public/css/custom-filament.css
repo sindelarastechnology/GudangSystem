@@ -1,0 +1,169 @@
+/* Custom Stylesheet - Menyulap Filament Menjadi Aplikasi Bespoke Premium */
+
+/* 1. Pengaturan Global & Perataan Font */
+body {
+    background-color: #f7fafc;
+    letter-spacing: -0.01em;
+}
+
+/* 2. Modifikasi Card & Kontainer Utama */
+.fi-wi-stats-overview-stat-card,
+.fi-ta-ctn,
+.fi-section {
+    border-radius: 1rem !important; /* rounded-2xl */
+    border: 1px solid rgba(228, 228, 231, 0.6) !important; /* border zinc-200 tipis */
+    box-shadow: 0 10px 35px -10px rgba(24, 24, 27, 0.02) !important; /* Soft shadow */
+    transition: all 0.3s ease-in-out;
+}
+
+/* 3. Efek Hover pada Tabel */
+.fi-ta-row {
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+.fi-ta-row:hover {
+    background-color: rgba(
+        20,
+        184,
+        166,
+        0.02
+    ) !important; /* Teal transparansi rendah */
+}
+
+/* 4. Kustomisasi Sidebar ala Glassmorphism */
+.fi-sidebar {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+    border-right: 1px solid rgba(228, 228, 231, 0.5) !important;
+}
+.dark .fi-sidebar {
+    background: rgba(24, 24, 27, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+    border-right: 1px solid rgba(39, 39, 42, 0.5) !important;
+}
+
+/* 5. Custom Active Sidebar Menu */
+.fi-sidebar-item-active a {
+    background: linear-gradient(
+        135deg,
+        rgba(20, 184, 166, 0.1) 0%,
+        rgba(16, 185, 129, 0.03) 100%
+    ) !important;
+    color: rgb(13, 148, 136) !important; /* Teal-600 */
+    border-left: 3px solid rgb(20, 184, 166) !important;
+    border-radius: 0 0.5rem 0.5rem 0 !important;
+    font-weight: 600 !important;
+}
+.dark .fi-sidebar-item-active a {
+    color: rgb(45, 212, 191) !important; /* Teal-400 */
+}
+
+/* 6. Mempercantik Tombol & Badge */
+.fi-btn {
+    border-radius: 0.5rem !important;
+    transition: all 0.2s ease !important;
+}
+.fi-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.15) !important;
+}
+.fi-badge {
+    border-radius: 9999px !important; /* Pill style */
+    padding: 0.25rem 0.75rem !important;
+    font-weight: 600 !important;
+}
+
+/* 7. Kustomisasi Radikal Halaman Login (Split-Screen CSS trick) */
+@media (min-width: 1024px) {
+    .fi-simple-layout {
+        display: flex !important;
+        flex-direction: row !important;
+        min-height: 100vh !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+
+    /* Bagian Kiri: Area Form Login */
+    .fi-simple-layout > div:first-child {
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 4rem !important;
+        z-index: 10;
+        background: white !important;
+    }
+
+    .fi-simple-main-ctn {
+        box-shadow: none !important;
+        border: none !important;
+        max-width: 440px !important;
+        width: 100% !important;
+        background: transparent !important;
+    }
+
+    /* Bagian Kanan: Buat background dekoratif modern buatan CSS */
+    .fi-simple-layout::after {
+        content: "" !important;
+        flex: 1.2 !important;
+        height: 100vh !important;
+        display: block !important;
+        background-image:
+            linear-gradient(
+                135deg,
+                rgba(20, 184, 166, 0.85) 0%,
+                rgba(15, 23, 42, 0.95) 100%
+            ),
+            url("https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1200&auto=format&fit=crop");
+        background-size: cover !important;
+        background-position: center !important;
+        position: relative !important;
+        box-shadow: inset 10px 0 30px -10px rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+/* 8. Dark Mode Adjustments */
+.dark body {
+    background-color: #18181b;
+}
+
+.dark .fi-wi-stats-overview-stat-card,
+.dark .fi-ta-ctn,
+.dark .fi-section {
+    border: 1px solid rgba(63, 63, 70, 0.6) !important;
+    box-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 9. Smooth Transitions for All Interactive Elements */
+a, button, input, select, textarea {
+    transition: all 0.2s ease;
+}
+
+/* 10. Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(20, 184, 166, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(20, 184, 166, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: rgba(45, 212, 191, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(45, 212, 191, 0.5);
+}
